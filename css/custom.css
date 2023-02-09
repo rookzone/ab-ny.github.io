@@ -1,0 +1,311 @@
+* {
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 17px;
+  text-underline-offset: 0.2em;
+  text-decoration-skip-ink: none;
+}
+
+header h1 {
+  font-size: 24px;
+  color: #fff; 
+  float: left;
+  margin-top: 15px;
+  margin-bottom: 0px;
+  padding-left: 15px;
+}
+
+h2 {
+	font-size: 36px;
+	color: #005489;
+	margin-bottom: 15px;
+  margin-top: 40px;
+}
+
+h3 {
+  font-size: 24px;
+  color: #005489;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-size: 19px;
+  color: #005489;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: underline;
+  color: #00539F;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: max(4px, 0.1875rem, 0.12em);
+  color: #333;
+}
+
+a:focus {
+    background-color: #fd0;
+    outline: none;
+    text-decoration: none;
+    box-shadow: 0 -2px #fd0, 0 4px black;
+    color: black;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    width: 1px;
+    height: 1px;
+    word-wrap: normal;
+}
+
+.visually-hidden.focusable:active, .visually-hidden.focusable:focus {
+    position: static !important;
+    overflow: visible;
+    clip: auto;
+    width: auto;
+    height: auto;
+}
+
+.navbar-default {
+    background-color: #005489;
+    border: none;
+}
+
+.navbar {
+  margin-bottom: 0px;
+  border-radius: 0px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #fff;
+    background-color: transparent;
+    text-decoration-thickness: max(4px, 0.1875rem, 0.12em);
+}
+
+a.logo:focus {
+    background-color: transparent;          
+    outline-offset: 7px;
+    outline: 3px solid #fd0;
+    box-shadow: 0 0 #fd0, 0 0px black;
+}
+
+li a:focus {
+    border-bottom: none;
+    background-color: #fd0;
+    outline: none;
+    text-decoration: none;
+    box-shadow: 0 -2px #fd0, 0 2px black;
+    color: black;
+}
+
+ul.nav.nav-tabs li.active a:focus {
+  background-color: #005489 !important;
+  color: #fff !important;
+}
+
+ul.nav.nav-tabs li.active a {
+  background-color: #005489 !important;
+  color: #fff !important;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.navbar .logo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.navbar-burger-text {
+    float: left;
+    margin-right: 10px;
+    color: #fff;
+}
+
+.navbar-burger-icon-container {
+    float: right;
+   margin-top: 2px;
+}
+
+.navbar-default .navbar-toggle:hover {
+    background-color: transparent;
+}
+
+.navbar-toggle .icon-bar {
+    height: 3px;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: underline;
+    background-color: #eee;
+}
+
+.navbar-default .navbar-nav > li > a:focus {
+    background-color: #fd0;
+    outline: none;
+    text-decoration: none;
+    box-shadow: 0 -2px #fd0, 0 4px black;
+    color: black;
+}
+
+.navbar-default .navbar-toggle:focus {
+    outline: 4px #fd0 solid;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-toggle:active {
+    background-color: #000;
+}
+
+.swatch {
+  height: 50px;
+  padding: 13px 20px;
+  color: #fff;
+  border-radius: 25px;
+}
+
+.swatch-small {
+  height: 50px;
+  width: 50px;
+  padding: 13px 20px;
+  color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+
+}
+
+.water {
+  background-color: #005489;
+}
+.countryside {
+  background-color: #347121;
+}
+.heritage {
+  background-color: #866243;
+}
+
+.focus1 {
+  background-color: #fd0;
+}
+
+.focus2 {
+  background-color: #000;
+}
+
+.footer {
+  border-top: 8px solid #005489;
+  background-color: #dedee1;
+  margin-top: 30px;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  line-height: 40px;
+}
+
+.footer a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.footer ul {
+  padding-left: 0px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: max(4px, 0.1875rem, 0.12em);
+  color: #000;
+}
+
+.footer a:focus {
+  text-decoration: underline;
+  text-decoration-thickness: max(4px, 0.1875rem, 0.12em);
+}
+
+.footer hr {
+    border-top: 1px solid #d2d2d2;
+}
+
+.copyright {
+  margin-top: 10px;
+  color: #000;
+}
+
+.col-xxs-12 {
+  float:left;
+  position:relative;
+  min-height:1px;
+  padding-right:15px;
+  padding-left:15px
+}
+
+/***
+Media queries
+***/
+
+@media (min-width: 768px)
+  {
+  .navbar-nav > li > a {
+      padding-top: 21px;
+      padding-bottom: 18px;
+  }
+  .footer a.logo img {
+    height: 60px;
+    float: right;
+  }  
+}
+
+
+@media (min-width: 768px) {
+p, ul, span, .govuk-details__text, table, a, input, .btn, textarea {
+  font-size: 17px;
+  }
+}
+
+@media (max-width: 767.9px) {
+  .logo img {
+    padding-left: 15px;
+  }
+  .footer {
+  padding-top: 25px;
+  padding-bottom: 0px;
+  }
+  .footer a.logo img{
+    height: 40px;
+  }
+    header h1 {
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding-left: 0px;
+    clear: left;
+    float: none;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+    color: #fff;
+  }
+
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
+    color: #fff;
+    text-decoration:underline
+  }  
+}
+
+@media (max-width: 359px) {
+.col-xxs-12 {
+  width:100%;
+  }
+}

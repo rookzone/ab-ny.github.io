@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/gov-uk-styles.css">
+  
+  <title>Summary builder</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Summary builder</h1>
+    <fieldset class="govuk-fieldset">
+      <label for="fname">Friendly name:</label><br>
+      <input type="text" id="fname" name="fname"><br>
+      <label for="lname">Data name:</label><br>
+      <input type="text" id="dname" name="lname"><br>
+      <label for="fname">Name of section change button will link to:</label><br>
+      <input type="text" id="sname" name="fname"><br>
+      <br>
+
+      <button type = "button" onclick="add()">Add</button>
+    </fieldset>
+    <span id = "errors" style = "display: none;"></span>
+    
+    <script src="js/builder.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <h2>Preview</h2>
+    <div id="preview" class="col-sm-12">
+      
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Please
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {add}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#" id="change-me">
+              above <span class="govuk-visually-hidden"> CHANGEME</span>
+            </a>
+          </dd>
+        </div>
+      </div>
+      <h2>Code</h2>
+      <textarea id = "copyme" onclick="this.select()" style = "width:100%; height:500px"></textarea>
+    </div>
+  </body>
+  </html>
