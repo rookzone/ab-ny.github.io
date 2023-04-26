@@ -2,20 +2,20 @@ window.builder = [];
 window.output = "";
 function add() {
   window.errors = "";
-  let fname = document.getElementById("fname").value;
-  let dname = document.getElementById("dname").value;
-  let sname = document.getElementById("sname").value;
+  let friendly_name = document.getElementById("friendly_name").value;
+  let data_name = document.getElementById("data_name").value;
+  let section_name = document.getElementById("section_name").value;
 
-  if (fname === "" || dname === "" || sname === "") {
+  if (friendly_name === "" || data_name === "" || section_name === "") {
     window.errors = "missing field";
     render();
     return;
   }
 
   next = {
-  "field_name": fname,
-  "data_name": dname,
-  "section_name": sname
+  "field_name": friendly_name,
+  "data_name": data_name,
+  "section_name": section_name
   }
   window.builder.push(next);
   cls();
@@ -54,7 +54,7 @@ function render() {
   for (let i = 0; i < window.builder.length; i += 1) {
     window.output += `  $("#change-${window.builder[i].field_name.toLowerCase().replaceAll(' ','-')}").click(function() {
     $(".sectionsHead")[0].style.display = "block";
-    $(".sectionsHead").find("[data-name='${window.builder[i].section_name}']").click();
+    $(".sectionsHead").find("[data-name='${window.builder[i].section_name}']").trigger("click");
   });\n`
   }
 window.output += `</script>`
@@ -65,7 +65,7 @@ window.output += `</script>`
 }
 
 function cls() {
-  document.getElementById("fname").value = "";
-  document.getElementById("dname").value = "";
-  sname = document.getElementById("sname").value = "";
+  document.getElementById("friendly_name").value = "";
+  document.getElementById("data_name").value = "";
+  section_name = document.getElementById("section_name").value = "";
 }
