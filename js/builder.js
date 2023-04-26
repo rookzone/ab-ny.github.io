@@ -54,7 +54,7 @@ function render() {
   for (let i = 0; i < window.builder.length; i += 1) {
     window.output += `  $("#change-${window.builder[i].field_name.toLowerCase().replaceAll(' ','-')}").click(function() {
     $(".sectionsHead")[0].style.display = "block";
-    $(".sectionsHead").find("[data-name='${window.builder[i].section_name}']").click();
+    $(".sectionsHead").find("[data-name='${window.builder[i].section_name}']").trigger("click");
   });\n`
   }
 window.output += `</script>`
