@@ -62,12 +62,9 @@ function render() {
     });\n`
   }
   window.output += `</script>`;
+
   document.getElementById("copyme").value = window.output;
-
-
   document.getElementById("preview").innerHTML = window.output;
-  
-  return;
 }
 
 function cls() {
