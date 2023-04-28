@@ -6,6 +6,10 @@ function add() {
   let data_name = document.getElementById("data_name").value;
   let section_name = document.getElementById("section_name").value;
   
+  if (section_name === "") {
+    section_name = friendly_name;
+  }
+
   if (friendly_name === "" || data_name === "" || section_name === "") {
     window.errors = "missing field";
     render();
@@ -58,9 +62,11 @@ function render() {
     });\n`
   }
   window.output += `</script>`;
-  
-  document.getElementById("preview").innerHTML = window.output;
   document.getElementById("copyme").value = window.output;
+
+
+  document.getElementById("preview").innerHTML = window.output;
+  
   return;
 }
 
