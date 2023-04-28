@@ -1,9 +1,13 @@
+/* 
+ * Styles from gov.uk frontend https://github.com/alphagov/govuk-frontend
+ * MIT licenced, see https://github.com/alphagov/govuk-frontend#licence
+ */
+
 .govuk-link,.app-prose-scope a {
   font-family: "Open Sans",Arial,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}/*! Copyright (c) 2011 by Margaret Calvert & Henrik Kubel. All rights reserved. The font has been customised for exclusive use on gov.uk. This cut is not commercially available. */
-
+}
 
 @media print {
   .govuk-link,.app-prose-scope a {
