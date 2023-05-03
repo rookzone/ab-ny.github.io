@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/gov-uk-styles.css">
+  
+  <title>JQuery .click migrate</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Quick .click() migrate</h1>
+    
+    <script src="js/migrate.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <span style="float:left; width:50%"><h2>Code</h2>
+      <textarea id = "code" onchange="migrate()" class = "area_box"></textarea></span>
+      <span style="float:left; width:50%"><h2>Replaced code</h2>
+      <textarea id = "code_out" onclick="this.select()" class = "area_box"></textarea></span>
+    </div>
+  </body>
+  </html>

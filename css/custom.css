@@ -309,3 +309,8 @@ p, ul, span, .govuk-details__text, table, a, input, .btn, textarea {
   width:100%;
   }
 }
+
+textarea.area_box {
+  width: 90%;
+  height: 700px;
+}
