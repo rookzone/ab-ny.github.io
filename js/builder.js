@@ -9,7 +9,7 @@ function add() {
   if (section_name === "") {
     section_name = friendly_name;
   }
-
+  
   if (friendly_name === "" || data_name === "" || section_name === "") {
     window.errors = "missing field";
     render();
@@ -62,7 +62,7 @@ function render() {
     });\n`
   }
   window.output += `</script>`;
-
+  
   document.getElementById("copyme").value = window.output;
   document.getElementById("preview").innerHTML = window.output;
 }
@@ -70,5 +70,5 @@ function render() {
 function cls() {
   document.getElementById("friendly_name").value = "";
   document.getElementById("data_name").value = "";
-  section_name = document.getElementById("section_name").value = "";
+  document.getElementById("section_name").value = "";
 }
