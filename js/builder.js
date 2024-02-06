@@ -59,6 +59,7 @@ function render() {
     window.output += `  $("#change-${window.builder[i].id.toLowerCase().replaceAll(' ','-')}").click(function() {
       $(".sectionsHead")[0].style.display = "block";
       $(".sectionsHead").find("[data-name='${window.builder[i].section_name}']").trigger("click");
+      $(".sectionsHead").find("[data-name='${window.builder[i].section_name}']").trigger("touchstart");
     });\n`
   }
   window.output += `</script>`;
