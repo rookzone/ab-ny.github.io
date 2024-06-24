@@ -56,12 +56,15 @@ function render() {
   window.output += `</dl>\n`;
   window.output += `<script>\n`
   for (let i = 0; i < window.builder.length; i += 1) {
+    // section_name creates a string that can be passed to .find which escapes any apostrophes
+    let section_name = window.builder[i].section_name.replaceAll('"', '\\"');
     window.output += `  $("#change-${window.builder[i].id.toLowerCase().replaceAll(' ','-')}").click(function() {
       $(".sectionsHead")[0].style.display = "block";
-      $(".sectionsHead").find("[data-name='${window.builder[i].section_name}']").trigger("click");
-      $(".sectionsHead").find("[data-name='${window.builder[i].section_name}']").trigger("touchstart");
+      $(".sectionsHead").find("[data-name=\\"${section_name}\\"]").trigger("click");
+      $(".sectionsHead").find("[data-name=\\"${section_name}\\"]").trigger("touchstart");
     });\n`
   }
+
   window.output += `</script>`;
   
   document.getElementById("copyme").value = window.output;
