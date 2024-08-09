@@ -11,6 +11,56 @@
   <link rel="stylesheet" href="css/gov-uk-styles.css">
   
   <title>Summary builder</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .govuk-summary-list__row {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      border: none;
+    }
+    .govuk-summary-list__key,
+    .govuk-summary-list__value,
+    .govuk-summary-list__actions {
+      flex: 1;
+      margin: 0 10px;
+    }
+    .move-buttons, .remove-button {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .move-link, .remove-link {
+      display: inline-block;
+      padding: 2px 5px;
+      border: 1px solid;
+      border-radius: 3px;
+      text-decoration: none;
+      text-align: center;
+      width: 30px;
+      height: 30px;
+    }
+    .move-link {
+      border-color: #007BFF;
+      color: #007BFF;
+    }
+    .move-link:hover {
+      background-color: #007BFF;
+      color: #FFF;
+    }
+    .remove-link {
+      border-color: #FF0000;
+      color: #FF0000;
+    }
+    .remove-link:hover {
+      background-color: #FF0000;
+      color: #FFF;
+    }
+    .govuk-summary-list__row h2 {
+      margin: 0 10px;
+      flex: 1;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -24,17 +74,28 @@
       <input type="text" id="section_name" name="section_name"><br>
       <br>
 
-      <button type = "button" onclick="add()">Add</button>
+      <button type="button" onclick="add()">Add</button>
     </fieldset>
-    <span id = "errors" style = "display: none;"></span>
+    <fieldset class="govuk-fieldset">
+      <label for="header_text">Header text:</label><br>
+      <input type="text" id="header_text" name="header_text"><br>
+      <br>
+
+      <button type="button" onclick="addHeader()">Add Header</button>
+    </fieldset>
+    <span id="errors" style="display: none;"></span>
     
     <script src="js/builder.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <h2>Preview</h2>
     <div id="preview" class="col-sm-12">
       
-      <dl class="govuk-summary-list">
+      <dl class="govuk-summary-list" style="margin: 20px 0; border: none;">
         <div class="govuk-summary-list__row">
+          <div class="move-buttons" style="margin-right: 10px;">
+            <a class="move-link" href="#" title="Move Up">&#9650;</a>
+            <a class="move-link" href="#" title="Move Down">&#9660;</a>
+          </div>
           <dt class="govuk-summary-list__key">
             Please
           </dt>
@@ -46,10 +107,14 @@
               above <span class="govuk-visually-hidden"> CHANGEME</span>
             </a>
           </dd>
+          <div class="remove-button" style="margin-left: 10px;">
+            <a class="remove-link" href="#" title="Remove">&#128465;</a>
+          </div>
         </div>
-      </div>
-      <h2>Code</h2>
-      <textarea id = "copyme" onclick="this.select()" style = "width:100%; height:500px"></textarea>
+      </dl>
     </div>
-  </body>
-  </html>
+    <h2>Code</h2>
+    <textarea id="copyme" onclick="this.select()" style="width:100%; height:500px"></textarea>
+  </div>
+</body>
+</html>
