@@ -1,6 +1,15 @@
 window.builder = [];
 window.output = "";
 
+const ItemType = {
+  Item: "item",
+  Header: "header",
+};
+
+function getNewID() {
+  return self.crypto.randomUUID().slice(0, 8);
+}
+
 function add() {
   window.errors = "";
   let friendly_name = $("#friendly_name").val();
@@ -17,12 +26,14 @@ function add() {
     return;
   }
 
+
+
   const next = {
-    "type": "item",
+    "type": ItemType.Item,
     "field_name": friendly_name,
     "data_name": data_name,
     "section_name": section_name,
-    "id": self.crypto.randomUUID().slice(0, 8),
+    "id": getNewID(),
   }
   window.builder.push(next);
   cls();
@@ -39,9 +50,9 @@ function addHeader() {
   }
 
   const next = {
-    "type": "header",
+    "type": ItemType.Header,
     "text": headerText,
-    "id": self.crypto.randomUUID().slice(0, 8),
+    "id": getNewID(),
   }
   window.builder.push(next);
   clsHeader();
@@ -86,7 +97,7 @@ function render() {
     for (let i = 0; i < window.builder.length; i += 1) {
       const item = window.builder[i];
 
-      if (item.type === "item") {
+      if (item.type === ItemType.Item) {
         previewOutput += `  <div class="govuk-summary-list__row" style="border: none;">
         <div class="move-buttons" style="margin-right: 10px;">
           <a class="move-link" href="#" data-action="move-up" data-index="${i}" title="Move Up">&#9650;</a>
@@ -121,7 +132,7 @@ function render() {
           </a>
         </dd>
         </div>\n`;
-      } else if (item.type === "header") {
+      } else if (item.type === ItemType.Header) {
         previewOutput += `  <div class="govuk-summary-list__row" style="border: none;">
         <div class="move-buttons" style="margin-right: 10px;">
           <a class="move-link" href="#" data-action="move-up" data-index="${i}" title="Move Up">&#9650;</a>
@@ -145,7 +156,7 @@ function render() {
     window.output += `<script>\n`;
     for (let i = 0; i < window.builder.length; i += 1) {
       const item = window.builder[i];
-      if (item.type === "item") {
+      if (item.type === ItemType.Item) {
         const section_name = item.section_name.replaceAll('"', '\\"');
         previewOutput += `  $("#change-${item.id.toLowerCase().replaceAll(' ', '-')}").click(function(event) {
       event.preventDefault();
