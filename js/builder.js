@@ -60,17 +60,21 @@ function addHeader() {
 }
 
 function moveUp(index) {
-  if (index > 0) {
-    [window.builder[index], window.builder[index - 1]] = [window.builder[index - 1], window.builder[index]];
-    render();
+  if (index == 0) { 
+    return;
   }
+
+  [window.builder[index], window.builder[index - 1]] = [window.builder[index - 1], window.builder[index]];
+  render();  
 }
 
 function moveDown(index) {
-  if (index < window.builder.length - 1) {
-    [window.builder[index], window.builder[index + 1]] = [window.builder[index + 1], window.builder[index]];
-    render();
+  if (index + 1 >= window.builder.length) {
+    return;
   }
+
+  [window.builder[index], window.builder[index + 1]] = [window.builder[index + 1], window.builder[index]];
+  render();  
 }
 
 function remove(index) {
