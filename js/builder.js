@@ -95,15 +95,15 @@ function render() {
   const rb = "}";
 
   if (window.builder.length > 0) {
-    previewOutput = `<dl class="govuk-summary-list" style="margin: 20px 0; border: none;">\n`;
+    previewOutput = `<dl class="govuk-summary-list">\n`;
     window.output = `<dl class="govuk-summary-list">\n`;
 
     for (let i = 0; i < window.builder.length; i += 1) {
       const item = window.builder[i];
 
       if (item.type === ItemType.Item) {
-        previewOutput += `  <div class="govuk-summary-list__row" style="border: none;">
-        <div class="move-buttons" style="margin-right: 10px;">
+        previewOutput += `  <div class="govuk-summary-list__row">
+        <div class="move-buttons">
           <a class="move-link" href="#" data-action="move-up" data-index="${i}" title="Move Up">&#9650;</a>
           <a class="move-link" href="#" data-action="move-down" data-index="${i}" title="Move Down">&#9660;</a>
         </div>
@@ -118,7 +118,7 @@ function render() {
             Change <span class="govuk-visually-hidden"> ${item.field_name}</span>
           </a>
         </dd>
-        <div class="remove-button" style="margin-left: 10px;">
+        <div class="remove-button">
           <a class="remove-link" href="#" data-action="remove" data-index="${i}" title="Remove">&#128465;</a>
         </div>
         </div>\n`;
@@ -137,20 +137,22 @@ function render() {
         </dd>
         </div>\n`;
       } else if (item.type === ItemType.Header) {
-        previewOutput += `  <div class="govuk-summary-list__row" style="border: none;">
-        <div class="move-buttons" style="margin-right: 10px;">
+        previewOutput += `
+        </dl>
+        <h2><span class="move-buttons">
           <a class="move-link" href="#" data-action="move-up" data-index="${i}" title="Move Up">&#9650;</a>
           <a class="move-link" href="#" data-action="move-down" data-index="${i}" title="Move Down">&#9660;</a>
-        </div>
-        <h2>${item.text}</h2>
-        <div class="remove-button" style="margin-left: 10px;">
+        </span>
+        ${item.text}
+        <div class="remove-button">
           <a class="remove-link" href="#" data-action="remove" data-index="${i}" title="Remove">&#128465;</a>
-        </div>
-        </div>\n`;
+        </div></h2>
+        <dl class="govuk-summary-list">
+        \n`;
 
-        window.output += `  <div class="govuk-summary-list__row">
+        window.output += `</dl>
         <h2>${item.text}</h2>
-        </div>\n`;
+        <dl class="govuk-summary-list">\n`;
       }
     }
     previewOutput += `</dl>\n`;
