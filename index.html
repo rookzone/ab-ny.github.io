@@ -8,59 +8,11 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/custom.css" rel="stylesheet">
+
   <link rel="stylesheet" href="css/gov-uk-styles.css">
-  
+  <link rel="stylesheet" href="css/move-remove-buttons.css"> 
   <title>Summary builder</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <style>
-    .govuk-summary-list__row {
-      display: flex;
-      align-items: center;
-      padding: 10px 0;
-      border: none;
-    }
-    .govuk-summary-list__key,
-    .govuk-summary-list__value,
-    .govuk-summary-list__actions {
-      flex: 1;
-      margin: 0 10px;
-    }
-    .move-buttons, .remove-button {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-    .move-link, .remove-link {
-      display: inline-block;
-      padding: 2px 5px;
-      border: 1px solid;
-      border-radius: 3px;
-      text-decoration: none;
-      text-align: center;
-      width: 30px;
-      height: 30px;
-    }
-    .move-link {
-      border-color: #007BFF;
-      color: #007BFF;
-    }
-    .move-link:hover {
-      background-color: #007BFF;
-      color: #FFF;
-    }
-    .remove-link {
-      border-color: #FF0000;
-      color: #FF0000;
-    }
-    .remove-link:hover {
-      background-color: #FF0000;
-      color: #FFF;
-    }
-    .govuk-summary-list__row h2 {
-      margin: 0 10px;
-      flex: 1;
-    }
-  </style>
 </head>
 <body>
   <div class="container">
@@ -76,6 +28,7 @@
 
       <button type="button" onclick="add()">Add</button>
     </fieldset>
+    <br>
     <fieldset class="govuk-fieldset">
       <label for="header_text">Header text:</label><br>
       <input type="text" id="header_text" name="header_text"><br>
@@ -90,9 +43,9 @@
     <h2>Preview</h2>
     <div id="preview" class="col-sm-12">
       
-      <dl class="govuk-summary-list" style="margin: 20px 0; border: none;">
+      <dl class="govuk-summary-list" >
         <div class="govuk-summary-list__row">
-          <div class="move-buttons" style="margin-right: 10px;">
+          <div class="move-buttons">
             <a class="move-link" href="#" title="Move Up">&#9650;</a>
             <a class="move-link" href="#" title="Move Down">&#9660;</a>
           </div>
